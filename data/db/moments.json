@@ -1,0 +1,320 @@
+[
+  {
+    "id": "m-ep-seed-1791471426736-01",
+    "episodeId": "ep-seed-1791471426736",
+    "userId": "usr-anant-goyal",
+    "index": 1,
+    "timestamp": "02:41",
+    "timestampSeconds": 161,
+    "title": "The Production Trap",
+    "quote": "The biggest mistake creators make is producing more content instead of extracting more value from what they already have.",
+    "type": "Insight",
+    "score": 94,
+    "whyItMatters": "Directly challenges creator hustle culture with high-leverage mathematical reality.",
+    "potentialPlatforms": [
+      "linkedin",
+      "x",
+      "instagram"
+    ],
+    "createdAt": "2026-10-08T14:57:06.776Z"
+  },
+  {
+    "id": "m-ep-seed-1791471426736-02",
+    "episodeId": "ep-seed-1791471426736",
+    "userId": "usr-anant-goyal",
+    "index": 2,
+    "timestamp": "06:15",
+    "timestampSeconds": 375,
+    "title": "Chatbot vs Operating Agent",
+    "quote": "A chatbot waits for you to tell it what to do every step. An agent understands the mission and delivers finished candidates ready for approval.",
+    "type": "Hook",
+    "score": 91,
+    "whyItMatters": "Clarifies the critical architectural difference between reactive chat and proactive tooling.",
+    "potentialPlatforms": [
+      "x",
+      "linkedin"
+    ],
+    "createdAt": "2026-10-08T14:57:06.776Z"
+  },
+  {
+    "id": "m-ep-seed-1791471426736-03",
+    "episodeId": "ep-seed-1791471426736",
+    "userId": "usr-anant-goyal",
+    "index": 3,
+    "timestamp": "22:11",
+    "timestampSeconds": 1331,
+    "title": "Platform Dialects",
+    "quote": "Copy-pasting the same text to LinkedIn and X is like speaking French in Tokyo. Each platform has its own vocabulary and attention span.",
+    "type": "Controversial",
+    "score": 95,
+    "whyItMatters": "Visual, high-retention mental model on content adaptation.",
+    "potentialPlatforms": [
+      "linkedin",
+      "x"
+    ],
+    "createdAt": "2026-10-08T14:57:06.776Z"
+  },
+  {
+    "id": "m-ep-seed-1791471426871-01",
+    "episodeId": "ep-seed-1791471426871",
+    "userId": "usr-demo-creator",
+    "index": 1,
+    "timestamp": "02:41",
+    "timestampSeconds": 161,
+    "title": "The Production Trap",
+    "quote": "The biggest mistake creators make is producing more content instead of extracting more value from what they already have.",
+    "type": "Insight",
+    "score": 94,
+    "whyItMatters": "Directly challenges creator hustle culture with high-leverage mathematical reality.",
+    "potentialPlatforms": [
+      "linkedin",
+      "x",
+      "instagram"
+    ],
+    "createdAt": "2026-10-08T14:57:06.872Z"
+  },
+  {
+    "id": "m-ep-seed-1791471426871-02",
+    "episodeId": "ep-seed-1791471426871",
+    "userId": "usr-demo-creator",
+    "index": 2,
+    "timestamp": "06:15",
+    "timestampSeconds": 375,
+    "title": "Chatbot vs Operating Agent",
+    "quote": "A chatbot waits for you to tell it what to do every step. An agent understands the mission and delivers finished candidates ready for approval.",
+    "type": "Hook",
+    "score": 91,
+    "whyItMatters": "Clarifies the critical architectural difference between reactive chat and proactive tooling.",
+    "potentialPlatforms": [
+      "x",
+      "linkedin"
+    ],
+    "createdAt": "2026-10-08T14:57:06.872Z"
+  },
+  {
+    "id": "m-ep-seed-1791471426871-03",
+    "episodeId": "ep-seed-1791471426871",
+    "userId": "usr-demo-creator",
+    "index": 3,
+    "timestamp": "22:11",
+    "timestampSeconds": 1331,
+    "title": "Platform Dialects",
+    "quote": "Copy-pasting the same text to LinkedIn and X is like speaking French in Tokyo. Each platform has its own vocabulary and attention span.",
+    "type": "Controversial",
+    "score": 95,
+    "whyItMatters": "Visual, high-retention mental model on content adaptation.",
+    "potentialPlatforms": [
+      "linkedin",
+      "x"
+    ],
+    "createdAt": "2026-10-08T14:57:06.872Z"
+  },
+  {
+    "id": "m-ep-seed-1791471697263-01",
+    "episodeId": "ep-seed-1791471697263",
+    "userId": "usr-1791471697178-xl8g50",
+    "index": 1,
+    "timestamp": "02:41",
+    "timestampSeconds": 161,
+    "title": "The Production Trap",
+    "quote": "The biggest mistake creators make is producing more content instead of extracting more value from what they already have.",
+    "type": "Insight",
+    "score": 94,
+    "whyItMatters": "Directly challenges creator hustle culture with high-leverage mathematical reality.",
+    "potentialPlatforms": [
+      "linkedin",
+      "x",
+      "instagram"
+    ],
+    "createdAt": "2026-10-08T15:01:37.269Z"
+  },
+  {
+    "id": "m-ep-seed-1791471697263-02",
+    "episodeId": "ep-seed-1791471697263",
+    "userId": "usr-1791471697178-xl8g50",
+    "index": 2,
+    "timestamp": "06:15",
+    "timestampSeconds": 375,
+    "title": "Chatbot vs Operating Agent",
+    "quote": "A chatbot waits for you to tell it what to do every step. An agent understands the mission and delivers finished candidates ready for approval.",
+    "type": "Hook",
+    "score": 91,
+    "whyItMatters": "Clarifies the critical architectural difference between reactive chat and proactive tooling.",
+    "potentialPlatforms": [
+      "x",
+      "linkedin"
+    ],
+    "createdAt": "2026-10-08T15:01:37.269Z"
+  },
+  {
+    "id": "m-ep-seed-1791471697263-03",
+    "episodeId": "ep-seed-1791471697263",
+    "userId": "usr-1791471697178-xl8g50",
+    "index": 3,
+    "timestamp": "22:11",
+    "timestampSeconds": 1331,
+    "title": "Platform Dialects",
+    "quote": "Copy-pasting the same text to LinkedIn and X is like speaking French in Tokyo. Each platform has its own vocabulary and attention span.",
+    "type": "Controversial",
+    "score": 95,
+    "whyItMatters": "Visual, high-retention mental model on content adaptation.",
+    "potentialPlatforms": [
+      "linkedin",
+      "x"
+    ],
+    "createdAt": "2026-10-08T15:01:37.269Z"
+  },
+  {
+    "id": "m-ep-1791471880864-qgwo0p-1",
+    "episodeId": "ep-1791471880864-qgwo0p",
+    "userId": "usr-anant-goyal",
+    "index": 1,
+    "timestamp": "02:40",
+    "timestampSeconds": 160,
+    "title": "The Production Principle",
+    "quote": "Extracting 10x value from what you already recorded beats publishing twice as much mediocre noise.",
+    "type": "Insight",
+    "score": 95,
+    "whyItMatters": "Challenges quantity-focused creator burnout with high-leverage reality.",
+    "potentialPlatforms": [
+      "linkedin",
+      "x",
+      "instagram"
+    ],
+    "createdAt": "2026-10-08T15:04:42.919Z"
+  },
+  {
+    "id": "m-ep-1791471880864-qgwo0p-2",
+    "episodeId": "ep-1791471880864-qgwo0p",
+    "userId": "usr-anant-goyal",
+    "index": 2,
+    "timestamp": "09:15",
+    "timestampSeconds": 555,
+    "title": "Distribution First",
+    "quote": "Every long-form conversation you have is an unmined quarry. Stop starting from scratch each morning.",
+    "type": "Hook",
+    "score": 92,
+    "whyItMatters": "Clear, memorable mental model.",
+    "potentialPlatforms": [
+      "x",
+      "linkedin"
+    ],
+    "createdAt": "2026-10-08T15:04:42.919Z"
+  },
+  {
+    "id": "m-ep-1791473478807-jo7qw7-1",
+    "episodeId": "ep-1791473478807-jo7qw7",
+    "userId": "usr-1791473457264-9wvnxl",
+    "index": 1,
+    "timestamp": "04:15",
+    "timestampSeconds": 255,
+    "title": "The Production Principle",
+    "quote": "Extracting 10x value from what you already recorded beats publishing twice as much mediocre noise.",
+    "type": "Insight",
+    "score": 96,
+    "whyItMatters": "Directly challenges the unsustainable treadmill of quantity-first publishing.",
+    "potentialPlatforms": [
+      "linkedin",
+      "x",
+      "instagram",
+      "newsletter"
+    ],
+    "createdAt": "2026-10-08T15:31:21.758Z"
+  },
+  {
+    "id": "m-ep-1791473478807-jo7qw7-2",
+    "episodeId": "ep-1791473478807-jo7qw7",
+    "userId": "usr-1791473457264-9wvnxl",
+    "index": 2,
+    "timestamp": "14:30",
+    "timestampSeconds": 870,
+    "title": "The Translation Rule",
+    "quote": "If your LinkedIn post looks like a copy-pasted tweet with hashtags, you have already lost the reader.",
+    "type": "Hook",
+    "score": 93,
+    "whyItMatters": "Clear tactical standard for platform calibration.",
+    "potentialPlatforms": [
+      "linkedin",
+      "x",
+      "blog"
+    ],
+    "createdAt": "2026-10-08T15:31:21.759Z"
+  },
+  {
+    "id": "m-ep-1791473478807-jo7qw7-3",
+    "episodeId": "ep-1791473478807-jo7qw7",
+    "userId": "usr-1791473457264-9wvnxl",
+    "index": 3,
+    "timestamp": "28:10",
+    "timestampSeconds": 1690,
+    "title": "The Human Moat",
+    "quote": "AI handles synthesis; humans provide the editorial spine.",
+    "type": "Takeaway",
+    "score": 91,
+    "whyItMatters": "Reassures creators that taste and curation remain irreplaceable.",
+    "potentialPlatforms": [
+      "x",
+      "newsletter",
+      "linkedin"
+    ],
+    "createdAt": "2026-10-08T15:31:21.759Z"
+  },
+  {
+    "id": "m-ep-1791551124945-g2130k-1",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "index": 1,
+    "timestamp": "04:15",
+    "timestampSeconds": 255,
+    "title": "The Production Principle",
+    "quote": "Extracting 10x value from what you already recorded beats publishing twice as much mediocre noise.",
+    "type": "Insight",
+    "score": 96,
+    "whyItMatters": "Directly challenges the unsustainable treadmill of quantity-first publishing.",
+    "potentialPlatforms": [
+      "linkedin",
+      "x",
+      "instagram",
+      "newsletter"
+    ],
+    "createdAt": "2026-10-09T13:05:29.830Z"
+  },
+  {
+    "id": "m-ep-1791551124945-g2130k-2",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "index": 2,
+    "timestamp": "14:30",
+    "timestampSeconds": 870,
+    "title": "The Translation Rule",
+    "quote": "If your LinkedIn post looks like a copy-pasted tweet with hashtags, you have already lost the reader.",
+    "type": "Hook",
+    "score": 93,
+    "whyItMatters": "Clear tactical standard for platform calibration.",
+    "potentialPlatforms": [
+      "linkedin",
+      "x",
+      "blog"
+    ],
+    "createdAt": "2026-10-09T13:05:29.833Z"
+  },
+  {
+    "id": "m-ep-1791551124945-g2130k-3",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "index": 3,
+    "timestamp": "28:10",
+    "timestampSeconds": 1690,
+    "title": "The Human Moat",
+    "quote": "AI handles synthesis; humans provide the editorial spine.",
+    "type": "Takeaway",
+    "score": 91,
+    "whyItMatters": "Reassures creators that taste and curation remain irreplaceable.",
+    "potentialPlatforms": [
+      "x",
+      "newsletter",
+      "linkedin"
+    ],
+    "createdAt": "2026-10-09T13:05:29.836Z"
+  }
+]

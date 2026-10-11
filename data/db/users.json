@@ -1,0 +1,119 @@
+[
+  {
+    "id": "usr-anant-goyal",
+    "name": "Anant Goyal",
+    "email": "goyalanant4991@gmail.com",
+    "passwordHash": "$2b$10$zn1bHogPmN4gOdBjavv7nu4x5L1BMYhfLDa/r2IsY8S0OpDLWZl/W",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-08T14:57:06.734Z",
+    "updatedAt": "2026-10-08T15:51:24.432Z"
+  },
+  {
+    "id": "usr-demo-creator",
+    "name": "Demo Creator",
+    "email": "demo@repurpose.ai",
+    "passwordHash": "$2b$10$EMhY.jg6ADkxnSEcX.xTmuKzRGXhwTlbusa97G.Oo3cyrDDMO3KUW",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-08T14:57:06.871Z",
+    "updatedAt": "2026-10-08T14:57:06.871Z"
+  },
+  {
+    "id": "usr-1791471697178-xl8g50",
+    "name": "Testnewuser",
+    "email": "testnewuser@example.com",
+    "passwordHash": "$2b$10$7..mPYwK.sFdgunPcPp9uuAznE6Z7YKVFfrxZbxGR5npaLboMj8aa",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-08T15:01:37.262Z",
+    "updatedAt": "2026-10-08T15:01:37.262Z"
+  },
+  {
+    "id": "usr-1791473457264-9wvnxl",
+    "name": "Alex Rivers",
+    "email": "alex.rivers@production.io",
+    "passwordHash": "$2b$10$ZJoqzPAaFgL.653ROIBtMOJBplLjEIJpxsTJ/YbVU8ESIx28mJj0a",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-08T15:30:57.373Z",
+    "updatedAt": "2026-10-08T15:30:57.373Z"
+  },
+  {
+    "id": "usr-1791474111856-3ux6s1",
+    "name": "Sarah Connor",
+    "email": "sarah@skyline.org",
+    "passwordHash": "$2b$10$XjatiDT8AQFPynhEsv16..DWTrwzO6ynDa7OdKDSe9Xy6d5aRHksm",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-08T15:41:51.950Z",
+    "updatedAt": "2026-10-08T15:41:51.950Z"
+  },
+  {
+    "id": "usr-1791474692913-7ccknc",
+    "name": "Freshcreator",
+    "email": "freshcreator@production.ai",
+    "passwordHash": "$2b$10$4QLleA1H7bR4gkBlPXMwxeREukjTTsFP04g4cJQZQAb4ph9xsvDPy",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-08T15:51:33.008Z",
+    "updatedAt": "2026-10-08T15:51:33.008Z"
+  },
+  {
+    "id": "usr-1791549943666-k7tg92",
+    "name": "Anant",
+    "email": "anantg0609@gmail.com",
+    "passwordHash": "$2b$10$5mWrn8wD29nm40mpwsX1nuBQkR/LGr5PcUGt6UCSyhXUfsRO1gxb6",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-09T12:45:44.060Z",
+    "updatedAt": "2026-10-09T12:45:44.060Z"
+  },
+  {
+    "id": "usr-1791552673486-bg21av",
+    "name": "User A",
+    "email": "test-a-po9anr@example.com",
+    "passwordHash": "$2b$10$UpoUN6H34/CyLazQeCzz0OncVxvtYzU3zK5ZcJjaxrmAaVUtgEmsO",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-09T13:31:13.720Z",
+    "updatedAt": "2026-10-09T13:31:13.722Z"
+  },
+  {
+    "id": "usr-1791552673766-r849p3",
+    "name": "User B",
+    "email": "test-b-po9anr@example.com",
+    "passwordHash": "$2b$10$QlA4GYDiwMBz3UzPoRWbsOv4TeR0TIvo7ArD2x0yES1tScbSVN7r2",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-09T13:31:13.981Z",
+    "updatedAt": "2026-10-09T13:31:13.981Z"
+  },
+  {
+    "id": "usr-1791552705658-6z7pxf",
+    "name": "User A",
+    "email": "test-a-882p8a@example.com",
+    "passwordHash": "$2b$10$TntBCbiKNw64Axb4c/iyFOHNKVInmt2Nz5gQMEKPO/dw5uO3R0B6u",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-09T13:31:45.868Z",
+    "updatedAt": "2026-10-09T13:31:45.870Z"
+  },
+  {
+    "id": "usr-1791552705902-1q38d4",
+    "name": "User B",
+    "email": "test-b-882p8a@example.com",
+    "passwordHash": "$2b$10$S4GtAoit6Ds5W7BNoKRX7.eWUKtI2gYrY7NTeDwgYK2LbH2l1OzBG",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-09T13:31:46.052Z",
+    "updatedAt": "2026-10-09T13:31:46.052Z"
+  },
+  {
+    "id": "usr-1791553711314-5et567",
+    "name": "User A",
+    "email": "test-a-pg0n46@example.com",
+    "passwordHash": "$2b$10$stYbWWaUFTZ6CLNuRJe1xu.OQftd2IW.a7jgZqgCku8B07CW6xpJC",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-09T13:48:31.512Z",
+    "updatedAt": "2026-10-09T13:48:31.513Z"
+  },
+  {
+    "id": "usr-1791553711555-bq6oo7",
+    "name": "User B",
+    "email": "test-b-pg0n46@example.com",
+    "passwordHash": "$2b$10$QU5jhosPOHwlNCntX0zJWeNQL5BkLBk6o.ScISYUQpcthdDpO/Jr2",
+    "role": "Creator & Founder",
+    "createdAt": "2026-10-09T13:48:31.740Z",
+    "updatedAt": "2026-10-09T13:48:31.740Z"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "name": "RepurposeAI",
+  "description": "AI-powered Show-Notes & Multi-Platform Repurposing Agent. Create once. Repurpose everywhere.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

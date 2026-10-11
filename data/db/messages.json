@@ -1,0 +1,21 @@
+[
+  {
+    "id": "msg-1791473530643-u",
+    "conversationId": "chat-1791473530643-3ud3f1",
+    "userId": "usr-1791473457264-9wvnxl",
+    "sender": "user",
+    "timestamp": "03:32 PM",
+    "text": "What are the 3 strongest hooks from The Leverage Economy?",
+    "createdAt": "2026-10-08T15:32:10.643Z"
+  },
+  {
+    "id": "msg-1791473532146-a",
+    "conversationId": "chat-1791473530643-3ud3f1",
+    "userId": "usr-1791473457264-9wvnxl",
+    "sender": "assistant",
+    "timestamp": "03:32 PM",
+    "text": "Here is the editorial perspective on \"What are the 3 strongest hooks from The Leverage Economy?\":\n\nBased on \"your content\", the most resonant strategy is to highlight \"core leverage\" and format it natively for your target channels.",
+    "structuredData": null,
+    "createdAt": "2026-10-08T15:32:12.146Z"
+  }
+]

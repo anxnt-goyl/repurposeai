@@ -1,0 +1,781 @@
+[
+  {
+    "id": "ts-ep-seed-1791471426736-01",
+    "episodeId": "ep-seed-1791471426736",
+    "userId": "usr-anant-goyal",
+    "timestamp": "00:00",
+    "timestampSeconds": 0,
+    "speaker": "Anant Goyal",
+    "text": "Welcome to the podcast. Today we are joined by Dr. Elena Vance to discuss the real architecture behind autonomous AI agents.",
+    "createdAt": "2026-10-08T14:57:06.777Z"
+  },
+  {
+    "id": "ts-ep-seed-1791471426736-02",
+    "episodeId": "ep-seed-1791471426736",
+    "userId": "usr-anant-goyal",
+    "timestamp": "02:41",
+    "timestampSeconds": 161,
+    "speaker": "Dr. Elena Vance",
+    "text": "The biggest mistake creators make is producing more content instead of extracting more value from what they already have.",
+    "momentId": "m-ep-seed-1791471426736-01",
+    "createdAt": "2026-10-08T14:57:06.777Z"
+  },
+  {
+    "id": "ts-ep-seed-1791471426736-03",
+    "episodeId": "ep-seed-1791471426736",
+    "userId": "usr-anant-goyal",
+    "timestamp": "06:15",
+    "timestampSeconds": 375,
+    "speaker": "Dr. Elena Vance",
+    "text": "A chatbot waits for you to tell it what to do every step. An agent understands the mission and delivers finished candidates ready for approval.",
+    "momentId": "m-ep-seed-1791471426736-02",
+    "createdAt": "2026-10-08T14:57:06.777Z"
+  },
+  {
+    "id": "ts-ep-seed-1791471426736-04",
+    "episodeId": "ep-seed-1791471426736",
+    "userId": "usr-anant-goyal",
+    "timestamp": "22:11",
+    "timestampSeconds": 1331,
+    "speaker": "Anant Goyal",
+    "text": "Copy-pasting the same text to LinkedIn and X is like speaking French in Tokyo. Each platform has its own vocabulary and attention span.",
+    "momentId": "m-ep-seed-1791471426736-03",
+    "createdAt": "2026-10-08T14:57:06.777Z"
+  },
+  {
+    "id": "ts-ep-seed-1791471426871-01",
+    "episodeId": "ep-seed-1791471426871",
+    "userId": "usr-demo-creator",
+    "timestamp": "00:00",
+    "timestampSeconds": 0,
+    "speaker": "Anant Goyal",
+    "text": "Welcome to the podcast. Today we are joined by Dr. Elena Vance to discuss the real architecture behind autonomous AI agents.",
+    "createdAt": "2026-10-08T14:57:06.872Z"
+  },
+  {
+    "id": "ts-ep-seed-1791471426871-02",
+    "episodeId": "ep-seed-1791471426871",
+    "userId": "usr-demo-creator",
+    "timestamp": "02:41",
+    "timestampSeconds": 161,
+    "speaker": "Dr. Elena Vance",
+    "text": "The biggest mistake creators make is producing more content instead of extracting more value from what they already have.",
+    "momentId": "m-ep-seed-1791471426871-01",
+    "createdAt": "2026-10-08T14:57:06.872Z"
+  },
+  {
+    "id": "ts-ep-seed-1791471426871-03",
+    "episodeId": "ep-seed-1791471426871",
+    "userId": "usr-demo-creator",
+    "timestamp": "06:15",
+    "timestampSeconds": 375,
+    "speaker": "Dr. Elena Vance",
+    "text": "A chatbot waits for you to tell it what to do every step. An agent understands the mission and delivers finished candidates ready for approval.",
+    "momentId": "m-ep-seed-1791471426871-02",
+    "createdAt": "2026-10-08T14:57:06.872Z"
+  },
+  {
+    "id": "ts-ep-seed-1791471426871-04",
+    "episodeId": "ep-seed-1791471426871",
+    "userId": "usr-demo-creator",
+    "timestamp": "22:11",
+    "timestampSeconds": 1331,
+    "speaker": "Anant Goyal",
+    "text": "Copy-pasting the same text to LinkedIn and X is like speaking French in Tokyo. Each platform has its own vocabulary and attention span.",
+    "momentId": "m-ep-seed-1791471426871-03",
+    "createdAt": "2026-10-08T14:57:06.872Z"
+  },
+  {
+    "id": "ts-ep-seed-1791471697263-01",
+    "episodeId": "ep-seed-1791471697263",
+    "userId": "usr-1791471697178-xl8g50",
+    "timestamp": "00:00",
+    "timestampSeconds": 0,
+    "speaker": "Anant Goyal",
+    "text": "Welcome to the podcast. Today we are joined by Dr. Elena Vance to discuss the real architecture behind autonomous AI agents.",
+    "createdAt": "2026-10-08T15:01:37.269Z"
+  },
+  {
+    "id": "ts-ep-seed-1791471697263-02",
+    "episodeId": "ep-seed-1791471697263",
+    "userId": "usr-1791471697178-xl8g50",
+    "timestamp": "02:41",
+    "timestampSeconds": 161,
+    "speaker": "Dr. Elena Vance",
+    "text": "The biggest mistake creators make is producing more content instead of extracting more value from what they already have.",
+    "momentId": "m-ep-seed-1791471697263-01",
+    "createdAt": "2026-10-08T15:01:37.269Z"
+  },
+  {
+    "id": "ts-ep-seed-1791471697263-03",
+    "episodeId": "ep-seed-1791471697263",
+    "userId": "usr-1791471697178-xl8g50",
+    "timestamp": "06:15",
+    "timestampSeconds": 375,
+    "speaker": "Dr. Elena Vance",
+    "text": "A chatbot waits for you to tell it what to do every step. An agent understands the mission and delivers finished candidates ready for approval.",
+    "momentId": "m-ep-seed-1791471697263-02",
+    "createdAt": "2026-10-08T15:01:37.269Z"
+  },
+  {
+    "id": "ts-ep-seed-1791471697263-04",
+    "episodeId": "ep-seed-1791471697263",
+    "userId": "usr-1791471697178-xl8g50",
+    "timestamp": "22:11",
+    "timestampSeconds": 1331,
+    "speaker": "Anant Goyal",
+    "text": "Copy-pasting the same text to LinkedIn and X is like speaking French in Tokyo. Each platform has its own vocabulary and attention span.",
+    "momentId": "m-ep-seed-1791471697263-03",
+    "createdAt": "2026-10-08T15:01:37.269Z"
+  },
+  {
+    "id": "ts-ep-1791471880864-qgwo0p-1",
+    "episodeId": "ep-1791471880864-qgwo0p",
+    "userId": "usr-anant-goyal",
+    "timestamp": "00:00",
+    "timestampSeconds": 0,
+    "speaker": "Analysis of YouTube source",
+    "text": "https://youtu.be/sJE1-5rV5O0?si=X8bzd1FGtQ2_DVp-",
+    "createdAt": "2026-10-08T15:04:42.919Z"
+  },
+  {
+    "id": "ts-ep-1791471880864-qgwo0p-2",
+    "episodeId": "ep-1791471880864-qgwo0p",
+    "userId": "usr-anant-goyal",
+    "timestamp": "00:30",
+    "timestampSeconds": 30,
+    "speaker": "Host",
+    "text": "Today we discuss key takeaways and media lessons from \"YouTube Video Production\". We break down practical execution strategies.",
+    "createdAt": "2026-10-08T15:04:42.919Z"
+  },
+  {
+    "id": "ts-ep-1791473478807-jo7qw7-1",
+    "episodeId": "ep-1791473478807-jo7qw7",
+    "userId": "usr-1791473457264-9wvnxl",
+    "timestamp": "00:00",
+    "timestampSeconds": 0,
+    "speaker": "00",
+    "text": "00 Alex Rivers: Welcome to the show. Today we examine why high-growth founders must operate as editors-in-chief rather than content treadmill runners.",
+    "createdAt": "2026-10-08T15:31:21.759Z"
+  },
+  {
+    "id": "ts-ep-1791473478807-jo7qw7-2",
+    "episodeId": "ep-1791473478807-jo7qw7",
+    "userId": "usr-1791473457264-9wvnxl",
+    "timestamp": "00:30",
+    "timestampSeconds": 30,
+    "speaker": "02",
+    "text": "30 Guest: Exactly. When you record a high-density conversation, the leverage is in multi-surface distribution. One recording can fuel an entire publishing engine across LinkedIn, X, and newsletters.",
+    "createdAt": "2026-10-08T15:31:21.759Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-1",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:01",
+    "timestampSeconds": 1,
+    "speaker": "Speaker",
+    "text": "[♪♪♪]",
+    "createdAt": "2026-10-09T13:05:29.839Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-2",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:18",
+    "timestampSeconds": 18,
+    "speaker": "Speaker",
+    "text": "♪ We're no strangers to love ♪",
+    "createdAt": "2026-10-09T13:05:29.842Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-3",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:22",
+    "timestampSeconds": 22,
+    "speaker": "Speaker",
+    "text": "♪ You know the rules and so do I ♪",
+    "createdAt": "2026-10-09T13:05:29.845Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-4",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:27",
+    "timestampSeconds": 27,
+    "speaker": "Speaker",
+    "text": "♪ A full commitment's what I'm thinking of ♪",
+    "createdAt": "2026-10-09T13:05:29.851Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-5",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:31",
+    "timestampSeconds": 31,
+    "speaker": "Speaker",
+    "text": "♪ You wouldn't get this from any other guy ♪",
+    "createdAt": "2026-10-09T13:05:29.856Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-6",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:35",
+    "timestampSeconds": 35,
+    "speaker": "Speaker",
+    "text": "♪ I just wanna tell you how I'm feeling ♪",
+    "createdAt": "2026-10-09T13:05:29.861Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-7",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:40",
+    "timestampSeconds": 40,
+    "speaker": "Speaker",
+    "text": "♪ Gotta make you understand ♪",
+    "createdAt": "2026-10-09T13:05:29.866Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-8",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:43",
+    "timestampSeconds": 43,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna give you up ♪",
+    "createdAt": "2026-10-09T13:05:29.869Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-9",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:45",
+    "timestampSeconds": 45,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna let you down ♪",
+    "createdAt": "2026-10-09T13:05:29.871Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-10",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:47",
+    "timestampSeconds": 47,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna run around and desert you ♪",
+    "createdAt": "2026-10-09T13:05:29.874Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-11",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:51",
+    "timestampSeconds": 51,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna make you cry ♪",
+    "createdAt": "2026-10-09T13:05:29.876Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-12",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:53",
+    "timestampSeconds": 53,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna say goodbye ♪",
+    "createdAt": "2026-10-09T13:05:29.879Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-13",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "00:55",
+    "timestampSeconds": 55,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna tell a lie and hurt you ♪",
+    "createdAt": "2026-10-09T13:05:29.883Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-14",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:00",
+    "timestampSeconds": 60,
+    "speaker": "Speaker",
+    "text": "♪ We've known each other for so long ♪",
+    "createdAt": "2026-10-09T13:05:29.886Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-15",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:04",
+    "timestampSeconds": 64,
+    "speaker": "Speaker",
+    "text": "♪ Your heart's been aching but you're too shy to say it ♪",
+    "createdAt": "2026-10-09T13:05:29.889Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-16",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:09",
+    "timestampSeconds": 69,
+    "speaker": "Speaker",
+    "text": "♪ Inside we both know what's been going ♪",
+    "createdAt": "2026-10-09T13:05:29.891Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-17",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:13",
+    "timestampSeconds": 73,
+    "speaker": "Speaker",
+    "text": "♪ We know the game and we're gonna play it ♪",
+    "createdAt": "2026-10-09T13:05:29.893Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-18",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:17",
+    "timestampSeconds": 77,
+    "speaker": "Speaker",
+    "text": "♪ And if you ask me how I'm feeling ♪",
+    "createdAt": "2026-10-09T13:05:29.896Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-19",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:22",
+    "timestampSeconds": 82,
+    "speaker": "Speaker",
+    "text": "♪ Don't tell me you're too blind to see ♪",
+    "createdAt": "2026-10-09T13:05:29.899Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-20",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:25",
+    "timestampSeconds": 85,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna give you up ♪",
+    "createdAt": "2026-10-09T13:05:29.902Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-21",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:27",
+    "timestampSeconds": 87,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna let you down ♪",
+    "createdAt": "2026-10-09T13:05:29.904Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-22",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:29",
+    "timestampSeconds": 89,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna run around and desert you ♪",
+    "createdAt": "2026-10-09T13:05:29.906Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-23",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:33",
+    "timestampSeconds": 93,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna make you cry ♪",
+    "createdAt": "2026-10-09T13:05:29.908Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-24",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:35",
+    "timestampSeconds": 95,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna say goodbye ♪",
+    "createdAt": "2026-10-09T13:05:29.910Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-25",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:38",
+    "timestampSeconds": 98,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna tell a lie and hurt you ♪",
+    "createdAt": "2026-10-09T13:05:29.911Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-26",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:42",
+    "timestampSeconds": 102,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna give you up ♪",
+    "createdAt": "2026-10-09T13:05:29.915Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-27",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:44",
+    "timestampSeconds": 104,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna let you down ♪",
+    "createdAt": "2026-10-09T13:05:29.919Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-28",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:46",
+    "timestampSeconds": 106,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna run around and desert you ♪",
+    "createdAt": "2026-10-09T13:05:29.921Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-29",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:50",
+    "timestampSeconds": 110,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna make you cry ♪",
+    "createdAt": "2026-10-09T13:05:29.923Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-30",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:52",
+    "timestampSeconds": 112,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna say goodbye ♪",
+    "createdAt": "2026-10-09T13:05:29.925Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-31",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:54",
+    "timestampSeconds": 114,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna tell a lie and hurt you ♪",
+    "createdAt": "2026-10-09T13:05:29.927Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-32",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "01:59",
+    "timestampSeconds": 119,
+    "speaker": "Speaker",
+    "text": "♪ (Ooh, give you up) ♪",
+    "createdAt": "2026-10-09T13:05:29.929Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-33",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:03",
+    "timestampSeconds": 123,
+    "speaker": "Speaker",
+    "text": "♪ (Ooh, give you up) ♪",
+    "createdAt": "2026-10-09T13:05:29.933Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-34",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:08",
+    "timestampSeconds": 128,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna give, never gonna give ♪",
+    "createdAt": "2026-10-09T13:05:29.937Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-35",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:10",
+    "timestampSeconds": 130,
+    "speaker": "Speaker",
+    "text": "♪ (Give you up) ♪",
+    "createdAt": "2026-10-09T13:05:29.940Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-36",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:12",
+    "timestampSeconds": 132,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna give, never gonna give ♪",
+    "createdAt": "2026-10-09T13:05:29.943Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-37",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:14",
+    "timestampSeconds": 134,
+    "speaker": "Speaker",
+    "text": "♪ (Give you up) ♪",
+    "createdAt": "2026-10-09T13:05:29.945Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-38",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:16",
+    "timestampSeconds": 136,
+    "speaker": "Speaker",
+    "text": "♪ We've known each other for so long ♪",
+    "createdAt": "2026-10-09T13:05:29.950Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-39",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:21",
+    "timestampSeconds": 141,
+    "speaker": "Speaker",
+    "text": "♪ Your heart's been aching but you're too shy to say it ♪",
+    "createdAt": "2026-10-09T13:05:29.954Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-40",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:25",
+    "timestampSeconds": 145,
+    "speaker": "Speaker",
+    "text": "♪ Inside we both know what's been going ♪",
+    "createdAt": "2026-10-09T13:05:29.957Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-41",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:29",
+    "timestampSeconds": 149,
+    "speaker": "Speaker",
+    "text": "♪ We know the game and we're gonna play it ♪",
+    "createdAt": "2026-10-09T13:05:29.960Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-42",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:33",
+    "timestampSeconds": 153,
+    "speaker": "Speaker",
+    "text": "♪ I just wanna tell you how I'm feeling ♪",
+    "createdAt": "2026-10-09T13:05:29.965Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-43",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:38",
+    "timestampSeconds": 158,
+    "speaker": "Speaker",
+    "text": "♪ Gotta make you understand ♪",
+    "createdAt": "2026-10-09T13:05:29.968Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-44",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:41",
+    "timestampSeconds": 161,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna give you up ♪",
+    "createdAt": "2026-10-09T13:05:29.971Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-45",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:43",
+    "timestampSeconds": 163,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna let you down ♪",
+    "createdAt": "2026-10-09T13:05:29.973Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-46",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:45",
+    "timestampSeconds": 165,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna run around and desert you ♪",
+    "createdAt": "2026-10-09T13:05:29.979Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-47",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:49",
+    "timestampSeconds": 169,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna make you cry ♪",
+    "createdAt": "2026-10-09T13:05:29.984Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-48",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:51",
+    "timestampSeconds": 171,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna say goodbye ♪",
+    "createdAt": "2026-10-09T13:05:29.988Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-49",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:54",
+    "timestampSeconds": 174,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna tell a lie and hurt you ♪",
+    "createdAt": "2026-10-09T13:05:29.991Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-50",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "02:58",
+    "timestampSeconds": 178,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna give you up ♪",
+    "createdAt": "2026-10-09T13:05:29.994Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-51",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "03:00",
+    "timestampSeconds": 180,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna let you down ♪",
+    "createdAt": "2026-10-09T13:05:29.998Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-52",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "03:02",
+    "timestampSeconds": 182,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna run around and desert you ♪",
+    "createdAt": "2026-10-09T13:05:30.001Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-53",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "03:06",
+    "timestampSeconds": 186,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna make you cry ♪",
+    "createdAt": "2026-10-09T13:05:30.003Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-54",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "03:08",
+    "timestampSeconds": 188,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna say goodbye ♪",
+    "createdAt": "2026-10-09T13:05:30.006Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-55",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "03:10",
+    "timestampSeconds": 190,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna tell a lie and hurt you ♪",
+    "createdAt": "2026-10-09T13:05:30.008Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-56",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "03:15",
+    "timestampSeconds": 195,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna give you up ♪",
+    "createdAt": "2026-10-09T13:05:30.011Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-57",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "03:17",
+    "timestampSeconds": 197,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna let you down ♪",
+    "createdAt": "2026-10-09T13:05:30.014Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-58",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "03:19",
+    "timestampSeconds": 199,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna run around and desert you ♪",
+    "createdAt": "2026-10-09T13:05:30.017Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-59",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "03:23",
+    "timestampSeconds": 203,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna make you cry ♪",
+    "createdAt": "2026-10-09T13:05:30.021Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-60",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "03:25",
+    "timestampSeconds": 205,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna say goodbye ♪",
+    "createdAt": "2026-10-09T13:05:30.023Z"
+  },
+  {
+    "id": "ts-ep-1791551124945-g2130k-61",
+    "episodeId": "ep-1791551124945-g2130k",
+    "userId": "usr-1791549943666-k7tg92",
+    "timestamp": "03:27",
+    "timestampSeconds": 207,
+    "speaker": "Speaker",
+    "text": "♪ Never gonna tell a lie and hurt you ♪",
+    "createdAt": "2026-10-09T13:05:30.025Z"
+  }
+]
