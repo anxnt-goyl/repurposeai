@@ -355,7 +355,9 @@ router.post('/', requireAuth, uploadSingleMedia, async (req: AuthenticatedReques
         userId,
         timestamp: seg.timestamp,
         timestampSeconds: seg.timestampSeconds,
-        speaker: seg.speaker || analysis.speakers[0] || 'Speaker',
+        speaker: seg.speaker && seg.speaker !== 'Transcript' && seg.speaker !== 'Speaker'
+          ? seg.speaker
+          : (analysis.speakers.length === 1 ? analysis.speakers[0] : 'Speaker 1'),
         text: seg.text,
         createdAt: new Date().toISOString(),
       }));
@@ -363,7 +365,7 @@ router.post('/', requireAuth, uploadSingleMedia, async (req: AuthenticatedReques
     } else {
       const lines = transcriptText.split('\n').filter((l: string) => l.trim().length > 0);
       savedTranscripts = lines.map((line: string, idx: number) => {
-        let speaker = analysis.speakers[idx % analysis.speakers.length] || 'Transcript';
+        let speaker = analysis.speakers.length === 1 ? analysis.speakers[0] : 'Speaker 1';
         let text = line.trim();
         let timestampStr = '';
         let totalSec = Math.min(parsedDurationSeconds, idx * 30);
@@ -398,7 +400,7 @@ router.post('/', requireAuth, uploadSingleMedia, async (req: AuthenticatedReques
           userId,
           timestamp: timestampStr,
           timestampSeconds: totalSec,
-          speaker: speaker || 'Transcript',
+          speaker: speaker || 'Speaker 1',
           text,
           createdAt: new Date().toISOString(),
         };
@@ -421,7 +423,10 @@ router.post('/', requireAuth, uploadSingleMedia, async (req: AuthenticatedReques
     try {
       batchAssets = await aiService.generateAllPlatformAssets(newEpisode, savedMoments[0]);
     } catch (genErr: any) {
-      await db.episodes.update(epId, { status: 'Draft' });
+      // Clean up partial episode, moments, and transcripts so retrying never duplicates records
+      await db.episodes.delete(epId);
+      await db.moments.deleteMany({ episodeId: epId });
+      await db.transcripts.deleteMany({ episodeId: epId });
       if (file && fs.existsSync(file.path)) {
         try { fs.unlinkSync(file.path); } catch {}
       }
@@ -440,7 +445,9 @@ router.post('/', requireAuth, uploadSingleMedia, async (req: AuthenticatedReques
     for (const plt of platforms) {
       const assetResult = batchAssets[plt];
       if (!assetResult || !assetResult.content) {
-        await db.episodes.update(epId, { status: 'Draft' });
+        await db.episodes.delete(epId);
+        await db.moments.deleteMany({ episodeId: epId });
+        await db.transcripts.deleteMany({ episodeId: epId });
         res.status(502).json({
           success: false,
           error: {
@@ -462,7 +469,7 @@ router.post('/', requireAuth, uploadSingleMedia, async (req: AuthenticatedReques
         platform: plt,
         title: titleStr,
         content: contentStr,
-        status: plt === 'linkedin' || plt === 'show_notes' ? 'approved' : 'needs_review',
+        status: 'needs_review',
         lastEdited: 'Just now',
         wordCount,
         readingTimeMinutes: Math.max(1, Math.ceil(wordCount / 180)),

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../contexts/ThemeContext';
@@ -35,8 +35,16 @@ export const SettingsPage: React.FC = () => {
     resetSidebarWidth,
   } = useSidebar();
 
-  const [name, setName] = useState(user?.name || 'Anant Goyal');
-  const [email, setEmail] = useState(user?.email || 'goyalanant4991@gmail.com');
+  const [name, setName] = useState(user?.name || '');
+  const [email, setEmail] = useState(user?.email || '');
+
+  // Synchronize form values whenever authenticated user profile updates or hydrates
+  useEffect(() => {
+    if (user) {
+      setName(user.name || '');
+      setEmail(user.email || '');
+    }
+  }, [user]);
   const [tone, setTone] = useState(preferences.tone);
   const [length, setLength] = useState(preferences.contentLength);
   const [creativity, setCreativity] = useState(preferences.creativity);
@@ -528,7 +536,7 @@ export const SettingsPage: React.FC = () => {
           <div>
             <p className="font-medium">Active Session</p>
             <p className="text-[11px] text-neutral-400">
-              Authenticated as {user?.email || 'goyalanant4991@gmail.com'}
+              Authenticated as {user?.email || 'Authenticated User'}
             </p>
           </div>
 

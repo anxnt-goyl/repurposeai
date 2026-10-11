@@ -67,21 +67,46 @@ export const ProcessingPage: React.FC = () => {
   const [currentStageIdx, setCurrentStageIdx] = useState(0);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const isExecutingRef = useRef(false);
+  const stageIntervalRef = useRef<any>(null);
 
-  useEffect(() => {
-    if (!stateData.title && !stateData.mediaFile && !stateData.youtubeUrl && !stateData.customTranscript) {
-      navigate('/new-repurpose', { replace: true });
-      return;
+  const cleanErrorMessage = (raw: any): string => {
+    if (!raw) return 'Processing failed. Please check your inputs and try again.';
+    const text = typeof raw === 'string' ? raw : raw?.message || JSON.stringify(raw);
+
+    // Try parsing raw JSON if embedded
+    try {
+      const match = text.match(/\{[\s\S]*\}/);
+      if (match) {
+        const parsed = JSON.parse(match[0]);
+        if (parsed?.error?.message) return cleanErrorMessage(parsed.error.message);
+        if (parsed?.message) return cleanErrorMessage(parsed.message);
+      }
+    } catch {}
+
+    const lower = text.toLowerCase();
+    if (lower.includes('generaterequestsperday') || lower.includes('quota metric') || lower.includes('daily request quota')) {
+      return 'Google Gemini API daily free quota has been exhausted. Please wait for the daily quota to reset or upgrade your plan.';
     }
+    if (lower.includes('503') || lower.includes('unavailable') || lower.includes('high demand') || lower.includes('overloaded')) {
+      return 'Google Gemini AI is temporarily experiencing high server demand (503 Service Unavailable). Please click Retry to resume.';
+    }
+    if (lower.includes('429') || lower.includes('resource_exhausted') || lower.includes('rate limit')) {
+      return 'Google Gemini AI rate limit reached. Please wait a moment and click Retry.';
+    }
+    if (lower.includes('etimedout') || lower.includes('econnreset') || lower.includes('fetch failed') || lower.includes('timeout')) {
+      return 'Network connection to the AI service timed out. Please check your connection and click Retry.';
+    }
+    return text.replace(/^Error:\s*/i, '').trim();
+  };
 
+  const startPipeline = async () => {
     if (isExecutingRef.current) return;
     isExecutingRef.current = true;
+    setErrorMsg(null);
+    setCurrentStageIdx(0);
 
-    let isMounted = true;
-    let stageInterval: any = null;
-
-    // Simulate progressive stage advancement while API executes in background
-    stageInterval = setInterval(() => {
+    if (stageIntervalRef.current) clearInterval(stageIntervalRef.current);
+    stageIntervalRef.current = setInterval(() => {
       setCurrentStageIdx((prev) => {
         if (prev < stages.length - 2) {
           return prev + 1;
@@ -90,65 +115,66 @@ export const ProcessingPage: React.FC = () => {
       });
     }, 2800);
 
-    async function runPipeline() {
+    try {
+      console.log(`[PROCESSING] Initiating pipeline for: "${displayTitle}"`);
+      const newEpisode = await episodeService.createEpisode({
+        title: stateData.title || undefined,
+        sourceType,
+        mediaFile: stateData.mediaFile,
+        youtubeUrl: stateData.youtubeUrl,
+        customTranscript: stateData.customTranscript,
+        customSpeakers: stateData.customSpeakers,
+        duration,
+      });
+
+      if (stageIntervalRef.current) clearInterval(stageIntervalRef.current);
+      setCurrentStageIdx(stages.length - 1);
+      addNewEpisode(newEpisode);
+
       try {
-        setErrorMsg(null);
-        console.log(`[PROCESSING] Initiating real backend pipeline for: "${displayTitle}"`);
-
-        const newEpisode = await episodeService.createEpisode({
-          title: stateData.title || undefined,
-          sourceType,
-          mediaFile: stateData.mediaFile,
-          youtubeUrl: stateData.youtubeUrl,
-          customTranscript: stateData.customTranscript,
-          customSpeakers: stateData.customSpeakers,
-          duration,
+        confetti({
+          particleCount: 30,
+          spread: 55,
+          origin: { y: 0.6 },
         });
+      } catch {}
 
-        if (!isMounted) return;
+      addToast(
+        'Repurposing Complete',
+        `Workspace ready for "${newEpisode.title}"`,
+        'success'
+      );
 
-        clearInterval(stageInterval);
-        setCurrentStageIdx(stages.length - 1);
+      setTimeout(() => {
+        navigate(`/workspace/${newEpisode.id}`, { replace: true });
+      }, 800);
+    } catch (err: any) {
+      if (stageIntervalRef.current) clearInterval(stageIntervalRef.current);
+      isExecutingRef.current = false;
+      console.error('[PROCESSING] Pipeline error:', err);
+      const friendlyMsg = cleanErrorMessage(err);
+      setErrorMsg(friendlyMsg);
+      addToast('Processing Error', friendlyMsg, 'error');
+    }
+  };
 
-        addNewEpisode(newEpisode);
-
-        try {
-          confetti({
-            particleCount: 30,
-            spread: 55,
-            origin: { y: 0.6 },
-          });
-        } catch {
-          // ignore
-        }
-
-        addToast(
-          'Repurposing Complete',
-          `Workspace ready for "${newEpisode.title}"`,
-          'success'
-        );
-
-        setTimeout(() => {
-          if (isMounted) {
-            navigate(`/workspace/${newEpisode.id}`, { replace: true });
-          }
-        }, 800);
-      } catch (err: any) {
-        clearInterval(stageInterval);
-        if (!isMounted) return;
-        console.error('[PROCESSING] Pipeline error:', err);
-        setErrorMsg(err.message || 'Processing failed. Please verify your inputs and retry.');
-        addToast('Processing error', err.message || 'Could not process recording', 'error');
-      }
+  useEffect(() => {
+    if (!stateData.title && !stateData.mediaFile && !stateData.youtubeUrl && !stateData.customTranscript) {
+      navigate('/new-repurpose', { replace: true });
+      return;
     }
 
-    runPipeline();
+    startPipeline();
 
     return () => {
-      isMounted = false;
-      if (stageInterval) clearInterval(stageInterval);
+      if (stageIntervalRef.current) clearInterval(stageIntervalRef.current);
     };
   }, []);
+
+  const handleRetry = () => {
+    isExecutingRef.current = false;
+    startPipeline();
+  };
 
   const progressPercent = errorMsg
     ? 0
@@ -181,14 +207,14 @@ export const ProcessingPage: React.FC = () => {
             <AlertCircle className="w-6 h-6" />
           </div>
           <div className="space-y-1">
-            <h3 className="text-sm font-semibold text-red-500">Pipeline Failed</h3>
+            <h3 className="text-sm font-semibold text-red-500">Pipeline Paused</h3>
             <p className="text-xs leading-relaxed max-w-md mx-auto" style={{ color: 'var(--text-secondary)' }}>
               {errorMsg}
             </p>
           </div>
           <div className="flex items-center justify-center gap-3 pt-2">
             <button
-              onClick={() => navigate('/new-repurpose')}
+              onClick={handleRetry}
               className="px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer shadow-xs hover:opacity-90"
               style={{
                 backgroundColor: 'var(--accent-primary)',
@@ -196,15 +222,15 @@ export const ProcessingPage: React.FC = () => {
               }}
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>Try Again</span>
+              <span>Retry Processing</span>
             </button>
             <button
-              onClick={() => navigate('/projects')}
+              onClick={() => navigate('/new-repurpose', { state: stateData })}
               className="px-3.5 py-2 rounded-lg text-xs font-medium border hover:bg-neutral-500/5 transition-colors cursor-pointer flex items-center gap-1.5"
               style={{ borderColor: 'var(--border-subtle)' }}
             >
               <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Projects</span>
+              <span>Adjust Settings</span>
             </button>
           </div>
         </div>

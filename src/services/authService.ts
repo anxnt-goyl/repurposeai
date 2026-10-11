@@ -33,5 +33,11 @@ export const authService = {
 
   logout(): void {
     setAuthToken(null);
+    try {
+      sessionStorage.removeItem('repurpose_login_user');
+      sessionStorage.removeItem('repurpose_login_success');
+    } catch {
+      // safely ignore in non-browser test environments
+    }
   },
 };

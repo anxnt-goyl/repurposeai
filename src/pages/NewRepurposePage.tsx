@@ -30,7 +30,7 @@ export const NewRepurposePage: React.FC = () => {
   } | null>(null);
   const [youtubeUrl, setYoutubeUrl] = useState('');
   const [customTitle, setCustomTitle] = useState('');
-  const [customSpeakers, setCustomSpeakers] = useState('Anant Goyal, Guest');
+  const [customSpeakers, setCustomSpeakers] = useState('');
   const [customTranscriptText, setCustomTranscriptText] = useState('');
   const [isDragging, setIsDragging] = useState(false);
 
@@ -451,7 +451,7 @@ export const NewRepurposePage: React.FC = () => {
               type="text"
               value={customSpeakers}
               onChange={(e) => setCustomSpeakers(e.target.value)}
-              placeholder="e.g. Anant Goyal (Host), Elena Vance (Guest)"
+              placeholder="e.g. Alex Rivera (Host), Dr. Jordan Lee (Guest)"
               className="w-full px-3 py-2 text-xs rounded-lg border outline-none font-sans"
               style={{
                 backgroundColor: 'var(--bg-surface-subtle)',

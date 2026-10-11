@@ -76,7 +76,7 @@ describe('aiService API Resilience', () => {
     mockGenerateContent.mockRejectedValue(error503);
 
     await expect(aiService.analyzeEpisodeTranscript('Title', 'Transcript', ['Host']))
-      .rejects.toThrow('AI analysis is currently unavailable or rate-limited due to high demand. Please wait a moment and try again.');
+      .rejects.toThrow(/Gemini AI is temporarily experiencing high server demand|503/);
 
     expect(mockGenerateContent).toHaveBeenCalledTimes(4); // 1 initial + 3 retries
   }, 30000);
@@ -88,8 +88,21 @@ describe('aiService API Resilience', () => {
     mockGenerateContent.mockRejectedValueOnce(authError);
 
     await expect(aiService.analyzeEpisodeTranscript('Title', 'Transcript', ['Host']))
-      .rejects.toThrow('AI analysis failed: API key not valid');
+      .rejects.toThrow(/Invalid Gemini API key/);
 
+    expect(mockGenerateContent).toHaveBeenCalledTimes(1);
+  });
+
+  it('PASS - Daily quota exhaustion fails immediately without wasteful retries', async () => {
+    const dailyQuotaError = new Error("Quota exceeded for quota metric 'Generate Content API requests per day'");
+    (dailyQuotaError as any).status = 'RESOURCE_EXHAUSTED';
+
+    mockGenerateContent.mockRejectedValue(dailyQuotaError);
+
+    await expect(aiService.analyzeEpisodeTranscript('Title', 'Transcript', ['Host']))
+      .rejects.toThrow(/Gemini AI free daily request quota has been reached/);
+
+    // Verified: Called only 1 time, NO looping or retrying when daily quota is exhausted!
     expect(mockGenerateContent).toHaveBeenCalledTimes(1);
   });
 
@@ -126,7 +139,7 @@ describe('aiService API Resilience', () => {
     };
 
     await expect(aiService.generateAllPlatformAssets(fakeEp))
-      .rejects.toThrow('AI generation is currently unavailable due to high demand. Please try again later.');
+      .rejects.toThrow(/Gemini AI is temporarily experiencing high server demand|503/);
   }, 30000);
 
   it('PASS - generateAllPlatformAssets rejects when model output misses platforms', async () => {

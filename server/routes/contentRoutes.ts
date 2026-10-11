@@ -76,7 +76,7 @@ router.patch('/:id', requireAuth, async (req: AuthenticatedRequest, res: Respons
       return;
     }
 
-    const { content, title } = req.body;
+    const { content, title, status } = req.body;
     const updates: Partial<DBContentAsset> = {
       updatedAt: new Date().toISOString(),
       lastEdited: 'Just now',
@@ -91,6 +91,10 @@ router.patch('/:id', requireAuth, async (req: AuthenticatedRequest, res: Respons
       const words = content.trim().split(/\s+/).filter(Boolean).length;
       updates.wordCount = words;
       updates.readingTimeMinutes = Math.max(1, Math.ceil(words / 180));
+    }
+
+    if (status !== undefined && ['draft', 'needs_review', 'approved', 'rejected'].includes(status)) {
+      updates.status = status;
     }
 
     const updated = await db.assets.update(asset.id, updates);

@@ -19,13 +19,16 @@ function getAIClient(): GoogleGenAI | null {
 /**
  * Parses retry delay from error if specified by Gemini RPC (e.g., "retryDelay": "3s" or "Please retry in 3.78s")
  */
-function extractRetryDelayMs(error: any): number {
+export function extractRetryDelayMs(error: any): number {
   try {
     const errorStr = typeof error === 'string' ? error : JSON.stringify(error) + (error?.message || '');
     const matchSeconds = errorStr.match(/retry in\s+([\d.]+)s/i) || errorStr.match(/retryDelay"?:\s*"([\d.]+)s/i);
     if (matchSeconds && matchSeconds[1]) {
       const sec = parseFloat(matchSeconds[1]);
       if (!isNaN(sec) && sec > 0) {
+        // If the service requests a delay over 60 seconds (e.g. daily quota window of 28,800s),
+        // do not block execution with useless sleep loops.
+        if (sec > 60) return 0;
         return Math.min(10000, Math.ceil(sec * 1000) + 500); // add 500ms safety cushion
       }
     }
@@ -35,23 +38,99 @@ function extractRetryDelayMs(error: any): number {
   return 3800; // default 3.8s for Gemini 5 RPM tier
 }
 
-function isTransientError(error: any): boolean {
+/**
+ * Distinguishes daily cumulative quota exhaustion from transient burst rate-limits.
+ * Never loop-retry daily exhausted quota.
+ */
+export function isDailyQuotaExhausted(error: any): boolean {
   if (!error) return false;
-  const str = String(error.message || '') + String(error.status || '') + JSON.stringify(error);
+  const str = String(error.message || '') + ' ' + JSON.stringify(error);
+  if (
+    str.includes('GenerateRequestsPerDay') ||
+    str.includes('requests per day') ||
+    str.includes('requests per day per project') ||
+    str.includes('daily limit reached')
+  ) {
+    return true;
+  }
+  // Check if error contains an unusually long retryDelay (> 60s, e.g., 28799s)
+  try {
+    const match = str.match(/retryDelay"?:\s*"([\d.]+)s/i) || str.match(/retry in\s+([\d.]+)s/i);
+    if (match && match[1]) {
+      const sec = parseFloat(match[1]);
+      if (!isNaN(sec) && sec > 60) return true;
+    }
+  } catch {}
+  return false;
+}
+
+/**
+ * Returns true only for transient errors that can succeed upon bounded retry:
+ * - 503 UNAVAILABLE / high demand
+ * - 429 short burst rate limits (RPM)
+ * - Network timeouts / connection resets
+ */
+export function isTransientError(error: any): boolean {
+  if (!error) return false;
+  // If daily quota is exhausted, it is permanent for today — do NOT retry
+  if (isDailyQuotaExhausted(error)) return false;
+
+  const str = String(error.message || '') + String(error.status || '') + ' ' + JSON.stringify(error);
   return (
-    str.includes('429') ||
-    str.includes('RESOURCE_EXHAUSTED') ||
-    str.includes('quota') ||
-    str.includes('rate-limits') ||
-    str.includes('Rate limit') ||
     str.includes('503') ||
     str.includes('UNAVAILABLE') ||
-    str.includes('high demand')
+    str.includes('high demand') ||
+    str.includes('overloaded') ||
+    str.includes('429') ||
+    str.includes('RESOURCE_EXHAUSTED') ||
+    str.includes('rate-limits') ||
+    str.includes('Rate limit') ||
+    str.includes('ETIMEDOUT') ||
+    str.includes('ECONNRESET') ||
+    str.includes('fetch failed') ||
+    str.includes('UND_ERR_CONNECT_TIMEOUT')
   );
 }
 
 /**
- * Executes a Gemini operation with exponential backoff and jitter for 429/503 errors
+ * Formats Gemini/RPC error into a human-readable, actionable message instead of raw JSON dumps
+ */
+export function formatAIErrorMessage(error: any): string {
+  if (!error) return 'An unexpected error occurred during AI content generation.';
+
+  if (isDailyQuotaExhausted(error)) {
+    return 'Gemini AI free daily request quota has been reached. Please wait for the daily quota window to reset or upgrade your Google AI Studio plan.';
+  }
+
+  const str = String(error.message || '') + ' ' + JSON.stringify(error);
+
+  if (str.includes('503') || str.includes('UNAVAILABLE') || str.includes('high demand') || str.includes('overloaded')) {
+    return 'Gemini AI is temporarily experiencing high server demand (503 Service Unavailable). Please click Retry to resume processing.';
+  }
+
+  if (str.includes('429') || str.includes('RESOURCE_EXHAUSTED') || str.includes('rate-limits') || str.includes('Rate limit')) {
+    return 'Gemini AI request rate limit reached (requests per minute). Please wait a moment and click Retry.';
+  }
+
+  if (str.includes('ETIMEDOUT') || str.includes('ECONNRESET') || str.includes('fetch failed') || str.includes('UND_ERR_CONNECT_TIMEOUT')) {
+    return 'Connection to Gemini AI timed out. Please check your network connection and click Retry.';
+  }
+
+  if (str.includes('API_KEY_INVALID') || str.includes('API key not valid') || str.includes('401') || str.includes('403')) {
+    return 'Invalid Gemini API key. Please verify GEMINI_API_KEY in your environment configuration.';
+  }
+
+  if (str.includes('not found') || str.includes('404')) {
+    return 'The configured Gemini AI model is currently unavailable on this API endpoint.';
+  }
+
+  // Strip error prefix if present
+  const baseMsg = typeof error === 'string' ? error : error.message || 'AI content generation failed.';
+  return baseMsg.replace(/^Error:\s*/i, '').trim();
+}
+
+/**
+ * Executes a Gemini operation with bounded exponential backoff and jitter for transient errors only
  */
 async function callWithTransientRetry<T>(
   operation: (ai: GoogleGenAI) => Promise<T>,
@@ -68,21 +147,30 @@ async function callWithTransientRetry<T>(
       return await operation(ai);
     } catch (err: any) {
       attempt++;
+
+      // Immediately fail without retrying if daily quota is exhausted
+      if (isDailyQuotaExhausted(err)) {
+        console.warn('[AI] Daily quota exhausted. Fast-failing without wasteful retry loops.');
+        throw new Error(formatAIErrorMessage(err));
+      }
+
+      // Retry only transient 429/503/timeout errors
       if (attempt <= maxRetries && isTransientError(err)) {
         let delayMs = extractRetryDelayMs(err);
-        // Exponential backoff if the delay isn't explicitly set by header
-        if (delayMs === 3800) {
-          delayMs = Math.min(15000, 2000 * Math.pow(2, attempt - 1));
+        // Exponential backoff if delay isn't explicitly set by header
+        if (delayMs === 3800 || delayMs === 0) {
+          delayMs = Math.min(10000, 2000 * Math.pow(2, attempt - 1));
         }
         // Add jitter (±20%)
         const jitter = delayMs * 0.2 * (Math.random() * 2 - 1);
         delayMs = Math.floor(delayMs + jitter);
-        
-        console.warn(`[AI] Transient error (429/503) hit. Backing off for ${delayMs}ms (attempt ${attempt}/${maxRetries})...`);
+
+        console.warn(`[AI] Transient error (${err.status || '429/503'}) encountered. Backing off for ${delayMs}ms (attempt ${attempt}/${maxRetries})...`);
         await new Promise((resolve) => setTimeout(resolve, delayMs));
         continue;
       }
-      throw err;
+
+      throw new Error(formatAIErrorMessage(err));
     }
   }
 }
@@ -400,13 +488,8 @@ Return ONLY valid JSON. No markdown code blocks, no preamble.`;
         moments: Array.isArray(parsed.moments) ? parsed.moments : [],
       };
     } catch (err: any) {
-      // Do not silently substitute fabricated analysis. Surface the real error so the user knows
-      // the transcript was not actually analyzed.
-      const isTransient = isTransientError(err);
-      const userMessage = isTransient
-        ? 'AI analysis is currently unavailable or rate-limited due to high demand. Please wait a moment and try again.'
-        : `AI analysis failed: ${err.message || 'Unknown error'}. Verify GEMINI_API_KEY is valid and the account has quota.`;
-      console.error('[AI] analyzeEpisodeTranscript error:', err.message);
+      const userMessage = formatAIErrorMessage(err);
+      console.error('[AI] analyzeEpisodeTranscript error:', userMessage);
       throw new Error(userMessage);
     }
   },
@@ -477,9 +560,9 @@ Return ONLY valid JSON.`;
       }
       return result;
     } catch (err: any) {
-      const isTransient = isTransientError(err);
-      console.error(`[AI] Multi-platform generation ${isTransient ? 'rate-limited/503' : 'errored'}:`, err.message);
-      throw new Error(isTransient ? 'AI generation is currently unavailable due to high demand. Please try again later.' : `AI generation failed: ${err.message}`);
+      const userMessage = formatAIErrorMessage(err);
+      console.error('[AI] Multi-platform generation error:', userMessage);
+      throw new Error(userMessage);
     }
   },
 
@@ -551,9 +634,9 @@ Return ONLY valid JSON.`;
         readingTimeMinutes: readingTime,
       };
     } catch (err: any) {
-      const isTransient = isTransientError(err);
-      console.error(`[AI] Single asset generation for ${platform} ${isTransient ? 'rate-limited/503' : 'errored'}:`, err.message);
-      throw new Error(isTransient ? 'AI generation is currently unavailable due to high demand. Please try again later.' : `AI generation failed: ${err.message}`);
+      const userMessage = formatAIErrorMessage(err);
+      console.error(`[AI] Single asset generation for ${platform} error:`, userMessage);
+      throw new Error(userMessage);
     }
   },
 
@@ -632,8 +715,9 @@ Return valid JSON only.`;
         structuredData: parsed.structuredData || null,
       };
     } catch (err: any) {
-      console.error('[AI] Chat transient/rate-limited or errored:', err.message);
-      throw new Error(isTransientError(err) ? 'AI chat is currently unavailable due to high demand. Please try again later.' : `AI chat failed: ${err.message}`);
+      const userMessage = formatAIErrorMessage(err);
+      console.error('[AI] Chat error:', userMessage);
+      throw new Error(userMessage);
     }
   },
 };

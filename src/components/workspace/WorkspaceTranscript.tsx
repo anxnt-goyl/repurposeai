@@ -68,9 +68,19 @@ export const WorkspaceTranscript: React.FC<WorkspaceTranscriptProps> = ({
       seg.timestamp.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const getSpeakerLabel = (segment: TranscriptSegment) => {
+    const raw = segment.speaker?.trim();
+    if (raw && raw.toLowerCase() !== 'transcript') {
+      return raw;
+    }
+    if (Array.isArray(episode.speakers) && episode.speakers.length === 1 && episode.speakers[0]) {
+      return episode.speakers[0];
+    }
+    return 'Speaker 1';
+  };
+
   const handleCopyText = (segment: TranscriptSegment) => {
-    const isGenericSpeaker = !segment.speaker || segment.speaker.toLowerCase() === 'speaker' || segment.speaker.toLowerCase() === 'speaker 1';
-    const speakerLabel = isGenericSpeaker ? 'Transcript' : segment.speaker;
+    const speakerLabel = getSpeakerLabel(segment);
     navigator.clipboard.writeText(`[${segment.timestamp}] ${speakerLabel}: "${segment.text}"`);
     setCopiedId(segment.id);
     addToast('Timestamped quote copied', `Copied quote at ${segment.timestamp}`, 'info');
@@ -210,9 +220,7 @@ export const WorkspaceTranscript: React.FC<WorkspaceTranscriptProps> = ({
                     )}
 
                     <span className="text-xs font-semibold" style={{ color: 'var(--text-primary)' }}>
-                      {!segment.speaker || segment.speaker.toLowerCase() === 'speaker' || segment.speaker.toLowerCase() === 'speaker 1'
-                        ? 'Transcript'
-                        : segment.speaker}
+                      {getSpeakerLabel(segment)}
                     </span>
 
                     {/* High-Value Moment Marker */}
